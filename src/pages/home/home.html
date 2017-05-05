@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Registro de usuarios
+    </ion-title>
+    <ion-buttons end *ngIf="showLogOut">
+      <button ion-button color="danger" clear icon-only (click)="logOut()">
+        <ion-icon name='log-out'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Usuario</ion-label>
+            <<ion-input type="text" name="email" [(ngModel)]="userObject.user" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Contraseña</ion-label>
+            <ion-input type="password" name="password" [(ngModel)] = "userObject.password" required></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <div padding>
+          <button block ion-button (click)="login()">Entrar</button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div padding>
+          <button block ion-button color="secondary" (click)="register()" >Registrar</button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div padding>
+          <button block ion-button color="danger" (click)="reset()" >Reiniciar</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
